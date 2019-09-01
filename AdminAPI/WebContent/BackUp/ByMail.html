@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+     <script src="js/Order.js"></script>
+     <style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+</head>
+<body>
+<div class="container" >
+
+<input ng-model="emailId" placeholder="Email Here"></input>&nbsp;&nbsp;
+  <button   ng-click="getOrderByMail()">Order By Mail</button>
+<br>
+<br>
+<table class="table">
+    <tr class="success">
+    <th>Order Id</th>
+   <th>From Address</th>
+    <th>To Address</th>
+     <th>Description</th>
+      <th>Estimated Weight</th>
+       <th>Distance</th>
+        <th>Name Of Del Person</th>
+         <th>Complete Del Address</th>
+         <th>Contact Of Del	 Person</th>
+          <th>Contact Of Pick Person</th>
+          <th>Name Of Pick Person</th>
+          <th>Complete Pick Person</th>
+           <th>Driver Name</th>
+            <th>Driver Number</th>
+             
+            
+              <th>Cancelled</th> 
+          <th>Accepted</th>
+          <th>Picked</th>
+          <th>Paid</th>
+  </tr>
+  <tr ng-repeat="x in orderDataByEmail" class="success">
+    <td>{{ x.id }}</td>
+     <td>{{ x.from_address }}</td>
+     <td>{{ x.to_address }}</td>
+      <td>{{ x.description }}</td>
+      <td>{{ x.estimated_weight }}</td>
+     <td>{{ x.total_distance }}</td>
+      <td>{{ x.name_of_del_person }}</td>
+      
+        <td>{{ x.complete_del_address }}</td>
+        
+          <td>{{ x.contact_del_person }}</td>
+           <td>{{ x.contact_pckup_person }}</td>
+             <td>{{ x.name_of_pickup_person }}</td>
+               <td>{{ x.complete_pckup_address }}</td>
+                <td>{{ x.driverName }}</td>
+                 <td>{{ x.driverNumber }}</td>
+                  <td>{{ x.is_cancelled_id }}</td>
+                <td>{{ x.is_accepted }}</td>
+                 <td>{{ x.is_picked_id }}</td>
+                  <td>{{ x.is_paid_id }}</td>
+  </tr>
+</table>
+  <br>
+    
+</div>
+</body>
+</html>

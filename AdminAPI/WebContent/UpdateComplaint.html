@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+    
+</head>
+<style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+<body>
+<div class="container">
+  <h2>Update Complaint</h2>
+  <form>
+  <div class="form-group">
+    <div class="col-xs-4">
+        <label for="ex3">Complaint Id</label>
+        <input class="form-control" id="uid" type="text" ng-model="uid" disabled>
+        </div>
+        <br>
+     <div class="col-xs-4">
+        <label for="ex3">Email</label>
+        <input class="form-control" id="uemail" type="email" ng-model="uemail">
+        </div>
+  <br>
+    <div class="col-xs-4"> 
+  <label for="sel1">Complaint Type:</label>
+  <select class="form-control" id="utype" ng-model="utype">
+    <option>Payment</option>
+    <option>Order</option>
+    <option>Delivery</option>
+    
+  </select>
+  </div>
+<br>
+ <div class="col-xs-4"> 
+  <label for="sel1">Complaint Status:</label>
+  <select class="form-control" id="ustatus" ng-model="ustatus">
+    <option>Logged</option>
+    <option>InProgress</option>
+    <option>Closed</option>
+    
+  </select>
+  </div>
+  <br>
+<div class="col-xs-4">
+  <label for="comment">Reason:</label>
+  <textarea class="form-control" rows="5" cols="50" id="ureason" ng-model="ureason" disabled></textarea>
+ </div>
+ <div class="col-xs-4">
+  <label for="comment">Last Update:</label>
+  <textarea class="form-control" rows="5" cols="50" id="ulastReason" ng-model="ulastReason" disabled></textarea>
+ </div>
+ <div class="col-xs-4">
+  <label for="comment">New Update:</label>
+  <textarea class="form-control" rows="5" cols="50" id="unewReason" ng-model="unewReason"></textarea>
+ </div>
+ <div class="col-xs-4">
+  <label for="comment">Logged Date:</label>
+  <input class="form-control" id="uld" type="text" ng-model="uld" disabled>
+ </div>
+ <div class="col-xs-4">
+  <label for="comment">Last Update Date:</label>
+  <input class="form-control" id="ulud" type="text" ng-model="ulud" disabled>
+ </div>
+ <button  id="updateButton" ng-click="update()" ng-disabled="updateFlag">Update</button>
+   </div>  
+  </form>
+ 
+</div>
+</body>
+</html>

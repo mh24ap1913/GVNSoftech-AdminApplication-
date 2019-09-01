@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+     <script src="js/Login.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+<body>
+<div class="container" >
+   <input ng-model="email" placeholder="Email Here"></input>&nbsp;&nbsp;
+    <button   ng-click="personInfo()">Person Info</button>
+    <br>
+    <br>
+    <table class="table">
+    <tr class="success">
+    <th>Reg Id</th>
+   <th>First Name</th>
+    <th>Middle Name</th>
+     <th>Last Name</th>
+      <th>Phone Number</th>
+       <th>Password</th>
+        <th>Age</th>
+         <th>Email</th>
+          <th>Distance Travelled</th>
+          <th>Gender</th>
+  </tr>
+  <tr ng-repeat="x in personData" class="success">
+    <td>{{ x.usr_reg_id }}</td>
+     <td>{{ x.first_name }}</td>
+     <td>{{ x.middle_name }}</td>
+      <td>{{ x.last_name }}</td>
+      <td>{{ x.phone_number }}</td>
+     
+      <td>{{ x.password }}</td>
+      
+        <td>{{ x.age }}</td>
+        
+          <td>{{ x.email_id }}</td>
+          <td>{{ x.totalDistance }}</td>
+           <td>{{ x.gender }}</td>
+  </tr>
+</table>
+<br><br>
+
+
+</div>
+</body>
+</html>

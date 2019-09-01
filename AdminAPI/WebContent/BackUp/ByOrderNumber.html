@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+     <script src="js/Order.js"></script>
+     <style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+</head>
+<body>
+<div class="container" >
+<input ng-model="orderId" placeholder="Order Number Here"></input>&nbsp;&nbsp;
+  <button   ng-click="getOrderById()">OrderDetails</button><br><br>
+  <table class="table">
+    <tr class="success">
+    <th>Order Id</th>
+   <th>From Address</th>
+    <th>To Address</th>
+     <th>Description</th>
+      <th>Estimated Weight</th>
+       <th>Distance</th>
+        <th>Name Of Del Person</th>
+         <th>Complete Del Address</th>
+         <th>Contact Of Del	 Person</th>
+          <th>Contact Of Pick Person</th>
+          <th>Name Of Pick Person</th>
+          <th>Complete Pick Person</th>
+           <th>Driver Name</th>
+            <th>Driver Number</th>
+             
+            
+              
+          <th>Accepted</th>
+          <th>Picked</th>
+          <th>Paid</th>
+  </tr>
+  <tr ng-repeat="x in orderData">
+    <td>{{ x.id }}</td>
+     <td>{{ x.fromAddress }}</td>
+     <td>{{ x.toAddress }}</td>
+      <td>{{ x.description }}</td>
+      <td>{{ x.estimatedWeight }}</td>
+     <td>{{ x.totalDistance }}</td>
+      <td>{{ x.nameOfDelPerson }}</td>
+      
+        <td>{{ x.completeDelAddress }}</td>
+        
+          <td>{{ x.contactDelPerson }}</td>
+           <td>{{ x.contactPckupPerson }}</td>
+             <td>{{ x.nameOfPckupPerson }}</td>
+               <td>{{ x.completePckupAddress }}</td>
+                <td>{{ x.driverName }}</td>
+                 <td>{{ x.driverNumber }}</td>
+                <td>{{ x.isAccepted }}</td>
+                 <td>{{ x.isPicked }}</td>
+                  <td>{{ x.isPaid }}</td>
+  </tr>
+</table>
+<br><br>
+
+</div>
+</body>
+</html>

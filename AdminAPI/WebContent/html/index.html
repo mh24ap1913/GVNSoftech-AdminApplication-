@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+     <script src="js/Login.js"></script>
+</head>
+<style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+<body>
+<div class="container" ng-app="loginApp"  ng-controller="loginController">
+  <select ng-model="type">
+  <option value="ALL">ALL</option>
+  <option value="LOGGED">LOGGED</option>
+  <option value="BUYERS">BUYERS</option>
+  <option value="SERVICEMAN">SERVICEMAN</option>
+ 
+</select>&nbsp;&nbsp;
+
+<button   ng-click="generalFunctions()">Click</button>
+<input ng-model="output" placeholder="Result"></input>&nbsp;&nbsp;
+<br>
+<br>
+<hr>
+<input ng-model="email" placeholder="Email Here"></input>&nbsp;&nbsp;
+    <button   ng-click="personInfo()">Person Info</button>
+    <br>
+    <br>
+    <table>
+    <tr>
+    <th>Reg Id</th>
+   <th>First Name</th>
+    <th>Middle Name</th>
+     <th>Last Name</th>
+      <th>Phone Number</th>
+       <th>Password</th>
+        <th>Age</th>
+         <th>Email</th>
+         
+          <th>Gender</th>
+  </tr>
+  <tr ng-repeat="x in personData">
+    <td>{{ x.usr_reg_id }}</td>
+     <td>{{ x.first_name }}</td>
+     <td>{{ x.middle_name }}</td>
+      <td>{{ x.last_name }}</td>
+      <td>{{ x.phone_number }}</td>
+     
+      <td>{{ x.password }}</td>
+      
+        <td>{{ x.age }}</td>
+        
+          <td>{{ x.email_id }}</td>
+           <td>{{ x.gender }}</td>
+  </tr>
+</table>
+<br><br>
+<hr>
+      <button   ng-click="pendingUsers()">Pending Users</button>
+      <br>
+      <br>
+      <table>
+    <tr>
+   
+    <th>Reg Id</th>
+   <th>Email</th>
+    <th>Aadhar</th>
+     <th>Vehicle RC</th>
+      <th>Police Verification Number</th>
+       <th>Driving License</th>
+        <th>Image</th>
+        
+  </tr>
+  <tr ng-repeat="x in pendingData">
+   <td>
+      <input type="checkbox" ng-model="x.selected"/></td>
+     <td>
+    <td>{{ x.id }}</td>
+     <td>{{ x.email_id }}</td>
+     <td><a ng-href="{{x.aadhar }}">Aadhar</a></td>
+     <td><a ng-href="{{x.vehicle_rc }}">Vehicle RC</a></td>
+     <td><a ng-href="{{x.pvin }}">Police V Number</a></td>
+     <td><a ng-href="{{x.driving_lic }}">Driving Lic</a></td>
+     <td><a ng-href="{{x.image }}">Image</a></td>
+      
+        
+          
+  </tr>
+</table>
+<br>
+<br>
+ <button   ng-click="accept()">Accept</button>
+ <br><br>
+ <hr>
+ <!-- <button   ng-click="reject()">Reject</button> -->
+     <input ng-model="loginId" placeholder="Enter Login Id"></input>&nbsp;&nbsp; <button   ng-click="mailFromLogin()">Mail FRom Login Id</button> <input ng-model="mailoutput" placeholder="Email"></input>&nbsp;&nbsp;
+</div>
+</body>
+</html>
